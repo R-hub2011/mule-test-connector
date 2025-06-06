@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:rcc="http://www.mulesoft.org/schema/mule/rcc"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/rcc http://www.mulesoft.org/schema/mule/rcc/current/mule-rcc.xsd">
+
+    <rcc:config name="config" configId="configId">
+        <rcc:connection requiredParameter="aValue" />
+    </rcc:config>
+
+    <flow name="sayHiFlow">
+        <rcc:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <rcc:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>
